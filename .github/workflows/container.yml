@@ -17,9 +17,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - env:
+
+      - name: Build and deploy
+        env:
           IP_ADDRESS: ${{ secrets.PROD_HOST_IP }}
           USER_NAME: ${{ secrets.PROD_HOST_USER_NAME }}
           PASSWORD: ${{ secrets.PROD_HOST_PASSWORD }}
           PRODUCTION_DOMAIN: ${{ secrets.PROD_BASE_DOMAIN }}
-      - run: npm install && npm run build && npm run prod-deploy
+        run: npm install && npm run build && npm run prod-deploy
