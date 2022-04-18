@@ -2,8 +2,10 @@ name: Deploy Container
 
 on:
   push:
-    branches: [prod]
-    paths: [container/**]
+    branches:
+      - prod
+    paths:
+      - container/**
 
 defaults:
   run:
