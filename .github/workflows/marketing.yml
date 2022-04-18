@@ -1,4 +1,4 @@
-name: Deploy Container
+name: Deploy Marketing
 
 on:
   push:
