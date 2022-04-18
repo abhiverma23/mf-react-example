@@ -5,7 +5,7 @@ on:
     branches:
       - prod
     paths:
-      - container/**
+      - 'container/**'
 
 defaults:
   run:
