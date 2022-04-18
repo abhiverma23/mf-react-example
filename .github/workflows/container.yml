@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - prod
-    paths:
-      - 'container/**'
+    #paths:
+    #  - 'container/**'
 
 defaults:
   run:
