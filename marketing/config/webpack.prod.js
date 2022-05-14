@@ -7,6 +7,7 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
+    publicPath: '/micro-frontend/react/marketing/'
   },
   plugins: [
     new ModuleFederationPlugin({
