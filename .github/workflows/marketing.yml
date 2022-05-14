@@ -2,12 +2,10 @@ name: Deploy Marketing
 
 on:
   push:
-    branches:
-      - prod
-      - main
+    branches: [main,prod]
     paths:
       - 'marketing/**'
-    workflow_dispatch:
+  workflow_dispatch:
 
 defaults:
   run:

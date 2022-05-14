@@ -2,12 +2,10 @@ name: Deploy Container
 
 on:
   push:
-    branches:
-      - prod
-      - main
+    branches: [main,prod]
     paths:
       - 'container/**'
-    workflow_dispatch:
+  workflow_dispatch:
 
 defaults:
   run:
