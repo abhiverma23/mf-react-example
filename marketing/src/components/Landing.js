@@ -94,21 +94,21 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify='center'>
                 <Grid item>
-                  <Link to={`${process.env.PUBLIC_URL}/pricing`}>
+                  <Link to='/pricing'>
                     <Button variant='contained' color='primary'>
                       Pricing
                     </Button>
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to={`${process.env.PUBLIC_URL}/pricing-non`}>
+                  <Link to='/pricing-non'>
                     <Button variant='outlined' color='primary'>
                       Pricing
                     </Button>
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to={`${process.env.PUBLIC_URL}/`}>
+                  <Link to='/'>
                     <Button variant='outlined' color='primary'>
                       Pricing
                     </Button>
