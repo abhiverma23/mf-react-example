@@ -4,6 +4,7 @@ import { StylesProvider } from '@material-ui/core/styles';
 
 import Landing from './components/Landing';
 import Pricing from './components/Pricing';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Switch>
             <Route exact path='/pricing' component={Pricing} />
             <Route exact path='/' component={Landing} />
+            <Route component={NotFound} />
           </Switch>
         </BrowserRouter>
       </StylesProvider>
