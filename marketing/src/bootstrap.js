@@ -14,4 +14,6 @@ if (process.env.NODE_ENV === 'development') {
   }
 }
 
+console.log("Inside Markiting Application");
+
 export { mount };
