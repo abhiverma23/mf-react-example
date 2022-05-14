@@ -11,7 +11,7 @@ function App() {
     <div>
       <StylesProvider>
         <BrowserRouter>
-          <Switch>
+          <Switch basename={'/micro-frontend/react/container/'}>
             <Route exact path='/pricing' component={Pricing} />
             <Route exact path='/' component={Landing} />
             <Route component={NotFound} />
