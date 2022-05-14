@@ -9,7 +9,7 @@ var config = {
   localRoot: __dirname + '/dist',
   remoteRoot: '/marketing',
   include: ['*', '.htaccess'],
-  deleteRemote: false,
+  deleteRemote: true,
 };
 
 ftpDeploy.deploy(config, function (err, res) {

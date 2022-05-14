@@ -10,7 +10,7 @@ var config = {
   localRoot: __dirname + '/dist',
   remoteRoot: '/container',
   include: ['*', '.htaccess'],
-  deleteRemote: false,
+  deleteRemote: true,
 };
 
 ftpDeploy.deploy(config, function (err, res) {
