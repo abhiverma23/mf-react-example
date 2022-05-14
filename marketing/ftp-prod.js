@@ -1,4 +1,5 @@
 var Deploy = require('ftp-deploy');
+require('dotenv').config();
 var ftpDeploy = new Deploy();
 
 var config = {
