@@ -13,9 +13,11 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path='/pricing' component={Pricing} />
-            <Route exact path='/micro-frontend/react/container'>
-              <Redirect to='/' />
-            </Route>
+            <Route
+              exact
+              path='/micro-frontend/react/container'
+              component={Landing}
+            />
             <Route exact path='/' component={Landing} />
             <Route component={NotFound} />
           </Switch>
