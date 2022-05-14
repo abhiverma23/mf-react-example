@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - prod
-    #paths:
-    #  - 'marketing/**'
+      - main
+    paths:
+      - 'marketing/**'
+    workflow_dispatch:
 
 defaults:
   run:
