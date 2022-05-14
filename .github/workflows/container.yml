@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Build And Deploy
         uses: actions/checkout@v2
+
+      - name: Build and deploy
         env:
           IP_ADDRESS: ${{ secrets.PROD_HOST_IP }}
           USER_NAME: ${{ secrets.PROD_HOST_USER_NAME }}
