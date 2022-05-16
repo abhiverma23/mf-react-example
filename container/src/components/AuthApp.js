@@ -22,7 +22,7 @@ function AuthApp({ onSingInClicked }) {
     });
 
     history.listen(onParentNavigate);
-  });
+  }, []);
 
   return <div ref={ref} />;
 }

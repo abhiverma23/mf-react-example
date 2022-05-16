@@ -10,6 +10,7 @@ import {
 const criteria = createGenerateClassName({ productionPrefix: 'co' });
 const LazyAuthApp = lazy(() => import('./components/AuthApp'));
 const LazyMarketingApp = lazy(() => import('./components/MarketingApp'));
+const LazyDashboardApp = lazy(() => import('./components/DashboardApp'));
 
 function App() {
   const [isSignedIn, setSignedIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
                   }}
                 />
               </Route>
+              <Route path='/dashboard' component={LazyDashboardApp} />
               <Route path='/' component={LazyMarketingApp} />
             </Switch>
           </Suspense>
