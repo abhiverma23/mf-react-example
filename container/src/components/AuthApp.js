@@ -16,6 +16,7 @@ function AuthApp() {
         }
       },
       initialPath: history.location.pathname,
+      onSignIn: () => console.log('Signin performed'),
     });
 
     history.listen(onParentNavigate);
@@ -24,4 +25,4 @@ function AuthApp() {
   return <div ref={ref} />;
 }
 
-export default MarketingApp;
+export default AuthApp;
