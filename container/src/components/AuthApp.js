@@ -2,7 +2,7 @@ import { mount } from 'auth/AuthApp';
 import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function MarketingApp() {
+function AuthApp() {
   const ref = useRef(null);
   const history = useHistory();
 
