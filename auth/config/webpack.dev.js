@@ -5,6 +5,9 @@ const packageJson = require('../package.json');
 
 module.exports = merge(common, {
   mode: 'development',
+  output: {
+    publicPath: 'http://localhost:8082/',
+  },
   devServer: {
     port: 8082,
     historyApiFallback: {
