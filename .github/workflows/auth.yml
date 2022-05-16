@@ -19,17 +19,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build
-        env:
-          IP_ADDRESS: ${{ secrets.PROD_HOST_IP }}
-          USER_NAME: ${{ secrets.PROD_HOST_USER_NAME }}
-          PASSWORD: ${{ secrets.PROD_HOST_PASSWORD }}
         run: npm install && npm run build
 
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{secrets.FTP_HOST}}
-          username: ${{secrets.FTP_USERNAME}}
-          password: ${{secrets.FTP_PASSWORD}}
+          server: ${{secrets.PROD_HOST_IP}}
+          username: ${{secrets.PROD_HOST_USER_NAME}}
+          password: ${{secrets.PROD_HOST_PASSWORD}}
           local-dir: ./dist/
           server-dir: /auth/
