@@ -14,7 +14,7 @@ function App({ history, onSignIn }) {
   return (
     <div>
       <StylesProvider generateClassName={criteria}>
-        <Router history={history}>
+        <Router history={history} basename ='/micro-frontend/react/container/'>
           <Switch>
             <Route exact path='/auth/signin'>
               <Signin onSignIn={onSignIn} />

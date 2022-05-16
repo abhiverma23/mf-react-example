@@ -25,7 +25,7 @@ function App() {
   }, [isSignedIn]);
 
   return (
-    <Router history={history}>
+    <Router history={history} basename ='/micro-frontend/react/container/'>
       <StylesProvider generateClassName={criteria}>
         <div>
           <Header
