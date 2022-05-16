@@ -1,14 +1,15 @@
-import React from 'react';
-import MarketingApp from './components/MarketingApp';
-import AuthApp from './components/AuthApp';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Progress from './components/Progress';
 import {
   StylesProvider,
   createGenerateClassName,
 } from '@material-ui/core/styles';
 
 const criteria = createGenerateClassName({ productionPrefix: 'co' });
+const LazyAuthApp = lazy(() => import('./components/AuthApp'));
+const LazyMarketingApp = lazy(() => import('./components/MarketingApp'));
 
 function App() {
   return (
@@ -16,14 +17,16 @@ function App() {
       <StylesProvider generateClassName={criteria}>
         <div>
           <Header />
-          <Switch>
-            <Route
-              path='/micro-frontend/react/container/'
-              component={MarketingApp}
-            />
-            <Route path='/auth' component={AuthApp} />
-            <Route path='/' component={MarketingApp} />
-          </Switch>
+          <Suspense fallback={<Progress />}>
+            <Switch>
+              <Route
+                path='/micro-frontend/react/container/'
+                component={LazyMarketingApp}
+              />
+              <Route path='/auth' component={LazyAuthApp} />
+              <Route path='/' component={LazyMarketingApp} />
+            </Switch>
+          </Suspense>
         </div>
       </StylesProvider>
     </BrowserRouter>
