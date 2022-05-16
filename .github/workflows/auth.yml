@@ -29,3 +29,10 @@ jobs:
           password: ${{secrets.PROD_HOST_PASSWORD}}
           local-dir: ./auth/dist/
           server-dir: /auth/
+      
+      - name: Purge remoteEntry.js
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.PROD_CDN_ZONE }}
+          CLOUDFLARE_TOKEN: ${{ secrets.PROD_CDN_TOKEN }}
+          PURGE_URLS: '["${{ secrets.PROD_BASE_DOMAIN }}/auth/remoteEntry.js"]'
