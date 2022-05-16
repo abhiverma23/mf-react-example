@@ -19,7 +19,7 @@ function MarketingApp() {
     });
 
     history.listen(onParentNavigate);
-  });
+  }, []);
 
   return <div ref={ref} />;
 }
