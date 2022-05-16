@@ -9,13 +9,14 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/micro-frontend/react/container/'
+    publicPath: '/micro-frontend/react/container/',
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
         marketing: `marketing@${domain}/marketing/remoteEntry.js`,
+        auth: `marketing@${domain}/auth/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),

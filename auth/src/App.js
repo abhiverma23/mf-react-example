@@ -8,7 +8,7 @@ import {
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 
-const criteria = createGenerateClassName({ productionPrefix: 'ma' });
+const criteria = createGenerateClassName({ productionPrefix: 'au' });
 
 function App({ history }) {
   return (
