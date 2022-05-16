@@ -17,6 +17,10 @@ function App() {
         <div>
           <Header />
           <Switch>
+            <Route
+              path='/micro-frontend/react/container/'
+              component={MarketingApp}
+            />
             <Route path='/auth' component={AuthApp} />
             <Route path='/' component={MarketingApp} />
           </Switch>
