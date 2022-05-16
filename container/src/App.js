@@ -11,7 +11,7 @@ const criteria = createGenerateClassName({ productionPrefix: 'co' });
 
 function App() {
   return (
-    <BrowserRouter basename ='/micro-frontend/react/container/'>
+    <BrowserRouter>
       <StylesProvider generateClassName={criteria}>
         <div>
           <Header />

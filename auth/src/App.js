@@ -5,9 +5,8 @@ import {
   createGenerateClassName,
 } from '@material-ui/core/styles';
 
-import Landing from './components/Landing';
-import Pricing from './components/Pricing';
-import NotFound from './components/NotFound';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
 
 const criteria = createGenerateClassName({ productionPrefix: 'ma' });
 
@@ -17,14 +16,8 @@ function App({ history }) {
       <StylesProvider generateClassName={criteria}>
         <Router history={history}>
           <Switch>
-            <Route exact path='/pricing' component={Pricing} />
-            <Route
-              exact
-              path='/micro-frontend/react/container'
-              component={Landing}
-            />
-            <Route exact path='/' component={Landing} />
-            <Route component={NotFound} />
+            <Route exact path='/auth/signin' component={Signin} />
+            <Route exact path='/auth/signup' component={Signup} />
           </Switch>
         </Router>
       </StylesProvider>
