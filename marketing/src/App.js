@@ -15,7 +15,7 @@ function App({ history }) {
   return (
     <div>
       <StylesProvider generateClassName={criteria}>
-        <Router history={history} basename ='/micro-frontend/react/container/'>
+        <Router history={history}>
           <Switch>
             <Route exact path='/pricing' component={Pricing} />
             <Route
