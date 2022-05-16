@@ -41,7 +41,6 @@ function App() {
               <Route path='/auth'>
                 <LazyAuthApp
                   onSingInClicked={() => {
-                    console.log('action performed');
                     setSignedIn(true);
                   }}
                 />
