@@ -1,0 +1,38 @@
+name: Deploy Dashboard
+
+on:
+  push:
+    branches: [main, prod]
+    paths:
+      - 'dashboard/**'
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: dashboard
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: npm install && npm run build
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{secrets.PROD_HOST_IP}}
+          username: ${{secrets.PROD_HOST_USER_NAME}}
+          password: ${{secrets.PROD_HOST_PASSWORD}}
+          local-dir: ./dashboard/dist/
+          server-dir: /dashboard/
+
+      - name: Purge remoteEntry.js
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.PROD_CDN_ZONE }}
+          CLOUDFLARE_TOKEN: ${{ secrets.PROD_CDN_TOKEN }}
+          PURGE_URLS: '["${{ secrets.PROD_BASE_DOMAIN }}/dashboard/remoteEntry.js"]'
